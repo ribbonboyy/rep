@@ -1,9 +1,8 @@
- /* Reset-ish */
 * { box-sizing: border-box; }
 html,body { height:100%; }
 body {
   margin:0;
-  background: #000; /* solid black background */
+  background: #000;
   color: #e6e6e6;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   display:flex;
@@ -12,10 +11,8 @@ body {
   min-height:100vh;
 }
 
-/* container */
 .page { position: relative; width:100%; max-width:1100px; display:flex; align-items:center; justify-content:center; }
 
-/* small circular pfp visible first */
 .pfp {
   width:140px;
   height:140px;
@@ -27,14 +24,13 @@ body {
 }
 .pfp:hover { transform: scale(1.04); }
 
-/* card (hidden by default, grows from pfp) */
 .card {
   position: absolute;
-  width:600px;            /* bigger card */
+  width:600px;          
   max-width: calc(100% - 40px);
-  background: #0f0f10;    /* slightly lighter than pure black */
+  background: #0f0f10;    
   border: 1px solid #1a1a1b;
-  border-radius: 8px;     /* sharp-ish corners */
+  border-radius: 8px;    
   padding: 26px;
   box-shadow: none;
   transform-origin: center center;
@@ -44,14 +40,12 @@ body {
   transition: transform .28s cubic-bezier(.2,.9,.2,1), opacity .22s ease;
 }
 
-/* visible state */
 .card.visible {
   transform: translateY(0) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* close button */
 .close {
   position: absolute;
   right:12px;
@@ -66,7 +60,6 @@ body {
 }
 .close:hover { color:#fff; }
 
-/* top area */
 .card-top {
   display:flex;
   gap:16px;
@@ -85,10 +78,8 @@ body {
 .status { color:#bdbdbd; font-size:13px; margin-top:4px; display:flex; align-items:center; gap:8px; }
 .dot { width:10px; height:10px; background:#ed4245; border-radius:50%; display:inline-block; }
 
-/* bio */
 .bio { margin:16px 0 20px; color:#cfcfcf; font-size:14px; line-height:1.35; }
 
-/* separator: centered line that doesn't touch borders */
 .separator {
   height:1px;
   width:78%;
@@ -97,7 +88,7 @@ body {
   border-radius:1px;
 }
 
-/* links row */
+
 .links {
   display:grid;
   grid-template-columns: repeat(2, 1fr);
@@ -118,18 +109,14 @@ body {
 }
 .link:hover { transform: translateY(-3px); background:#1b1b1c; }
 
-/* icons */
 .icon { width:18px; height:18px; display:inline-block; object-fit:contain; filter: none; }
 
-/* platform colors */
 .link.blurple { background: linear-gradient(180deg,#2f2f58,#292a4a); color:#eef3ff; border:1px solid rgba(114,82,255,0.08); }
 .link.blurple:hover { filter:brightness(1.02); transform: translateY(-3px); }
 .link.neutral { background:#141416; color:#e6e6e6; }
 
-/* accessibility focus */
 .link:focus, .close:focus, #pfp:focus { outline: 2px solid rgba(255,255,255,0.06); outline-offset:2px; }
 
-/* responsive tweaks */
 @media (max-width:640px) {
   .card { width:92%; padding:18px; }
   .links { grid-template-columns: 1fr; }
