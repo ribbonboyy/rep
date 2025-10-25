@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mad</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>maddy — profile</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="wrapper">
-    <img src="IMG_1338.png" alt="Profile" class="pfp" id="pfp" />
+  <div class="page">
+    <img id="pfp" class="pfp" src="IMG_1338.png" alt="scar profile picture" />
 
-    <div class="profile-card" id="profile-card">
-      <button class="close-btn" id="close-btn">&times;</button>
-      <div class="top">
-        <img src="IMG_1338.png" class="pfp-large" alt="scar" />
-        <div class="info">
-          <h1>madeline</h1>
-          <p class="subtext">.gg/jizzcord</p>
-          <div class="status">
-            <span class="dot"></span> Do Not Disturb
+    <aside id="card" class="card" role="dialog" aria-hidden="true">
+      <button id="close" class="close" aria-label="Close profile">×</button>
+
+      <header class="card-top">
+        <img class="pfp-large" src="IMG_1338.png" alt="scar" />
+        <div class="meta">
+          <div class="name-row">
+            <h1 class="name">madeline</h1>
           </div>
+          <div class="sub">.gg/jizzcord</div>
+          <div class="status"><span class="dot" aria-hidden="true"></span>Do Not Disturb</div>
         </div>
-      </div>
+      </header>
 
-      <p class="desc">
-        the world best niche server owner and microceleb
-      </p>
+      <p class="bio">the world best niche sevrer owner and mincrocelbrity</p>
 
-      <div class="links">
-        <a href="https://discord.gg/jizzcord" target="_blank">Jizzcord</a>
-        <a href="https://discord.gg/zQMXFPGR2M" target="_blank">Six Seven</a>
-        <a href="https://discord.gg/h8Wf4Gq5sx" target="_blank">:3</a>
-      </div>
-    </div>
+      <!-- floating separator line -->
+      <div class="separator" aria-hidden="true"></div>
+
+      <!-- Links -->
+      <nav class="links" aria-label="Links">
+        <a class="link blurple" href="https://discord.gg/jizzcord" target="_blank" rel="noopener">
+          <img src="discord.png" alt="" class="icon" /> Jizzcord
+        </a>
+
+        <a class="link blurple" href="https://discord.gg/zQMXFPGR2M" target="_blank" rel="noopener">
+          <img src="discord.png" alt="" class="icon" /> Six Seven
+        </a>
+
+        <a class="link blurple" href="https://discord.gg/h8Wf4Gq5sx" target="_blank" rel="noopener">
+          <img src="discord.png" alt="" class="icon" /> :3
+        </a>
+
+        <a class="link neutral" href="https://www.roblox.com/users/160253710/profile" target="_blank" rel="noopener">
+          <img src="roblox.png" alt="" class="icon" /> Roblox
+        </a>
+      </nav>
+    </aside>
   </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
 
   <script src="script.js"></script>
 </body>
