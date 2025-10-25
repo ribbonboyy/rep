@@ -1,13 +1,30 @@
-const pfp = document.getElementById('pfp');
-const card = document.getElementById('profile-card');
-const closeBtn = document.getElementById('close-btn');
+document.addEventListener('DOMContentLoaded', () => {
+  const pfp = document.getElementById('pfp');
+  const card = document.getElementById('card');
+  const close = document.getElementById('close');
 
-pfp.addEventListener('click', () => {
-  card.classList.remove('hidden');
-  setTimeout(() => card.classList.add('visible'), 50);
-});
+  if (!pfp || !card || !close) return;
 
-closeBtn.addEventListener('click', () => {
-  card.classList.remove('visible');
-  setTimeout(() => card.classList.add('hidden'), 400);
+  const openCard = () => {
+    card.classList.add('visible');
+    card.setAttribute('aria-hidden', 'false');
+  };
+
+  const closeCard = () => {
+    card.classList.remove('visible');
+    card.setAttribute('aria-hidden', 'true');
+  };
+
+  pfp.addEventListener('click', openCard);
+  close.addEventListener('click', closeCard);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeCard();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!card.classList.contains('visible')) return;
+    const inside = card.contains(e.target) || pfp.contains(e.target);
+    if (!inside) closeCard();
+  });
 });
